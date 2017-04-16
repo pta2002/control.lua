@@ -124,6 +124,33 @@ function love.draw()
     end
 end
 ```
+### Events
+You can specify functions to be run on button press and button release, with the
+Control:addKeyPressed and Control:addKeyReleased methods:
+
+```lua
+p1:addKeyPressed(keys, controllerbuttons, func)
+p1:addKeyReleased(keys, controllerbuttons, func)
+```
+
+This will call func when one of keys or controllerbuttons is pressed. You also need
+to call Control:keypressed, Control:keyreleased, Control:joystickpressed and Control:joystickreleased
+on their respective events:
+
+```lua
+function love.keypressed(key, sc, isrepeat)
+    p1:keypressed(key, sc, isrepeat)
+end
+function love.joystickpressed(js, btn)
+    p1:joystickpressed(js, btn)
+end
+function love.keyreleased(key, sc, isrepeat)
+    p1:keyreleased(key, sc, isrepeat)
+end
+function love.joystickreleased(js, btn)
+    p1:joystickreleased(js, btn)
+end
+```
 
 # LICENSE
 ```
