@@ -7,7 +7,8 @@
 -- the terms of the MIT license. See LICENSE for details
 --
 
-local Object = require "classic"
+local folderOfThisFile = (...):match("(.-)[^%.]+$")
+local Object = require(folderOfThisFile .. "classic.classic")
 local Control = Object:extend()
 
 function Control:new(controller)

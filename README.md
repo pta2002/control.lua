@@ -2,14 +2,18 @@
 
 There's an example file in main.lua
 
-This library depends on [classic.lua](https://github.com/rxi/classic.lua). 
-Download it on the same folder as control.lua to use.
-
 ## Usage
+First clone the library into your project:
+
+```bash
+# --recursive is required because this depends on git submodules
+$ git clone https://github.com/pta2002/control.lua.git --recursive
+```
+
 Require the library and create a Control object:
 
 ```lua
-local Control = require "control"
+local Control = require "control.control"
 
 function love.load()
     p1 = Control(1) -- 1 is the controller you want to use
