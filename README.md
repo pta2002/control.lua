@@ -104,7 +104,7 @@ jumping = p1:getButton("jump")
 
 Full example:
 
-```
+```lua
 local Control = require "control"
 
 function love.init()
