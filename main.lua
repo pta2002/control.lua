@@ -5,7 +5,7 @@ function love.load()
     y = 0
     w = 10
     h = 10
-    p1 = Control(1)
+    p1 = Control:new(1)
     p1:addButton("blue", {"space"}, {15})
     p1:addAxis("x", {{"a", "left"}, {"d", "right"}}, {{1}, {8}, {6}})
     p1:addAxis("y", {{"w", "up"}, {"s", "down"}}, {{2}, {5}, {7}})

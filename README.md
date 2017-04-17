@@ -16,7 +16,7 @@ Require the library and create a Control object:
 local Control = require "control.control"
 
 function love.load()
-    p1 = Control(1) -- 1 is the controller you want to use
+    p1 = Control:new(1) -- 1 is the controller you want to use
 end
 ```
 
@@ -61,7 +61,7 @@ local Control = require "control"
 function love.load()
     x = 0
     y = 0
-    p1 = Control(1) -- Use the first controller
+    p1 = Control:new(1) -- Use the first controller
     -- WASD for moving, left thumbstick, or the controller D-pad
     p1:addAxis("x", {{"a", "left"}, {"d", "right"}}, {{1}, {8}, {6}})
     p1:addAxis("y", {{"w", "up"}, {"s", "down"}}, {{2}, {5}, {7}})
@@ -112,7 +112,7 @@ Full example:
 local Control = require "control"
 
 function love.init()
-    p1 = Control(1) -- Create a new control using the first controller
+    p1 = Control:new(1) -- Create a new control using the first controller
     p1:addButton("blue", {"space", "w", "up"}, {16}) -- Pressing space, w or up on a keyboard and the button with ID 16 on a controller will trigger the 'blue' button
 end
 
@@ -129,8 +129,8 @@ You can specify functions to be run on button press and button release, with the
 Control:addKeyPressed and Control:addKeyReleased methods:
 
 ```lua
-p1:addKeyPressed(keys, controllerbuttons, func)
-p1:addKeyReleased(keys, controllerbuttons, func)
+p1:addOnPressed(keys, controllerbuttons, func)
+p1:addOnReleased(keys, controllerbuttons, func)
 ```
 
 This will call func when one of keys or controllerbuttons is pressed. You also need

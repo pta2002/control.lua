@@ -7,13 +7,14 @@
 -- the terms of the MIT license. See LICENSE for details
 --
 
-local folderOfThisFile = (...):match("(.-)[^%.]+$")
-local Object = require(folderOfThisFile .. "classic.classic")
-local Control = Object:extend()
+local Control = {}
 
 Control.version = "0.2.0"
 
 function Control:new(controller)
+    o = {}
+    setmetatable(o, self)
+    self.__index = self
     self.controller = controller
     self.buttons = {}
     self.axes = {}
@@ -21,6 +22,7 @@ function Control:new(controller)
     self.keyrelease = {}
     self.joypressed = {}
     self.joyreleased = {}
+    return o
 end
 
 function Control:addAxis(label, keyboard, controller)
