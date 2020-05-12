@@ -126,7 +126,7 @@ end
 ```
 ### Events
 You can specify functions to be run on button press and button release, with the
-Control:addKeyPressed and Control:addKeyReleased methods:
+Control:addOnPressed and Control:addOnReleased methods:
 
 ```lua
 p1:addOnPressed(keys, controllerbuttons, func)
